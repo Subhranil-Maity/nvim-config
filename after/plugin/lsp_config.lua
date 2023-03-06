@@ -13,6 +13,9 @@ local lsp = require('lsp-zero').preset({
 lsp.setup_servers({ 'lua-language-server',
     'luau-lsp',
     'pyright',
-    'python-lsp-server',})
+    'python-lsp-server',
+	'rust-analyzer',
+    })
+
 
 lsp.setup()

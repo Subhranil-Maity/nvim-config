@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\fight\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  harpoon = {
+    loaded = true,
+    path = "C:\\Users\\fight\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "C:\\Users\\fight\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
@@ -171,6 +176,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\fight\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\fight\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
+  ["vim-auto-save"] = {
+    loaded = true,
+    path = "C:\\Users\\fight\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-auto-save",
+    url = "https://github.com/907th/vim-auto-save"
   }
 }
 

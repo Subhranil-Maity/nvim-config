@@ -24,7 +24,7 @@ use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
-
+use '907th/vim-auto-save'
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v1.x',
@@ -46,5 +46,10 @@ use {
     {'L3MON4D3/LuaSnip'},             -- Required
     {'rafamadriz/friendly-snippets'}, -- Optional
   }
+}
+-- Lua
+use {
+  "folke/trouble.nvim",
+  requires = "nvim-tree/nvim-web-devicons",
 }
 end)
