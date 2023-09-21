@@ -1,16 +1,20 @@
-colorConfig = function()
-	require('rose-pine').setup({
-		disable_background = true
-	})
+return {
+        'maxmx03/dracula.nvim',
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+        config = function ()
+        local dracula = require 'dracula'
 
-	function ColorMyPencils(color)
-		color = color or "rose-pine"
-		vim.cmd("colorscheme " ..  color)
+            dracula.setup()
 
-	end
-	ColorMyPencils()
-end
+            vim.cmd.colorscheme 'dracula'
+        end
+       }
 
 
-return { 'rose-pine/neovim', name = 'rose-pine', config = colorConfig }
+ 
+--return { 'dracula/vim',name='dracula', config = function() 
+--vim.cmd("colorscheme " ..  'dracula')
+--end }
+
 

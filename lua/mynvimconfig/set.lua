@@ -2,10 +2,10 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 
 vim.opt.wrap = false
-
+vim.opt.ts = 4
 
 vim.opt.swapfile = true
-vim.opt.backup = true
+vim.opt.backup = false
 
 
 
