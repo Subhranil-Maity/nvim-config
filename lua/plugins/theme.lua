@@ -6,15 +6,12 @@ return {
         local dracula = require 'dracula'
 
             dracula.setup()
-
-            vim.cmd.colorscheme 'dracula'
+		--vim.cmd [[colorscheme catppuccin]]
+           -- vim.cmd.colorscheme 'catppuccin'
         end
        }
 
 
  
---return { 'dracula/vim',name='dracula', config = function() 
---vim.cmd("colorscheme " ..  'dracula')
---end }
 
 

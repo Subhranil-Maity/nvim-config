@@ -4,7 +4,7 @@ treesitterConfig = function()
 
   sync_install = false,
 
-  auto_install = false,
+  auto_install = true,
 
 
   highlight = {

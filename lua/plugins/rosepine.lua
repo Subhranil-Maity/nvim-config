@@ -13,4 +13,4 @@ colorConfig = function()
 end
 
 --return { 'rose-pine/neovim', name = 'rose-pine', config = colorConfig }
-return { 'rose-pine/neovim', name = 'rose-pine' }
+return { 'rose-pine/neovim', name = 'rose-pine', config = colorConfig  }
