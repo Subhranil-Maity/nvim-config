@@ -17,7 +17,7 @@ set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make sp
 set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
 
-vim.api.nvim_set_keymap('n', 'C-h', ':TmuxNavigateLeft<cr>', {})
-vim.api.nvim_set_keymap('n', 'C-j', ':TmuxNavigateDown<cr>', {})
-vim.api.nvim_set_keymap('n', 'C-k', ':TmuxNavigateUp<cr>', {})
-vim.api.nvim_set_keymap('n', 'C-l', ':TmuxNavigateRight<cr>', {})
+set('n', 'C-h', ':TmuxNavigateLeft<cr>', {})
+set('n', 'C-j', ':TmuxNavigateDown<cr>', {})
+set('n', 'C-k', ':TmuxNavigateUp<cr>', {})
+set('n', 'C-l', ':TmuxNavigateRight<cr>', {})

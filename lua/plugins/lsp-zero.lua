@@ -1,11 +1,5 @@
 lspConfig = function()
 		local lsp_zero = require('lsp-zero')
-		lsp_zero.extend_lspconfig()
-		lsp_zero.on_attach(function(client, bufnr)
-				-- see :help lsp-zero-keybindings
-				-- to learn the available actions
-				lsp_zero.default_keymaps({buffer = bufnr})
-		end)
 		lsp_zero.on_attach(function(client, bufnr)
 				local opts = {buffer = bufnr, remap = false}
 
@@ -20,44 +14,54 @@ lspConfig = function()
 				vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
 				vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 		end)
-
 		require('mason').setup({})
 		require('mason-lspconfig').setup({
-				ensure_installed = {
-						'lua_ls', 
-				},
-				handler = {
+				ensure_installed = {'lua_ls'},
+				handlers = {
 						lsp_zero.default_setup,
+				},
+		})
+		local cmp = require('cmp')
+
+		cmp.setup({
+				sources = {
+						{name = 'nvim_lsp'}
+				},
+				mapping = cmp.mapping.preset.insert({
+						['<C-Space>'] = cmp.mapping.complete(),
+				}),
+				snippet = {
+						expand = function(args)
+								require('luasnip').lsp_expand(args.body)
+						end,
 				},
 		})
 end
 
 return {
-		{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x',
+  {
+		  'VonHeikemen/lsp-zero.nvim', 
+		  branch = 'v3.x',
+		  config = lspConfig,
+  },
 
-		config = lspConfig
-},
+  --- Uncomment these if you want to manage LSP servers from neovim
+  {'williamboman/mason.nvim'},
+  {'williamboman/mason-lspconfig.nvim'}, 
 
---- Uncomment these if you want to manage LSP servers from neovim
-{'williamboman/mason.nvim'},
-{
-		'williamboman/mason-lspconfig.nvim' 
-},
+  -- LSP Support
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      {'hrsh7th/cmp-nvim-lsp'},
+    },
+  },
 
--- LSP Support
-{
-		'neovim/nvim-lspconfig',
-		dependencies = {
-				{'hrsh7th/cmp-nvim-lsp'},
-		},
-},
-
--- Autocompletion
-{
-		'hrsh7th/nvim-cmp',
-		dependencies = {
-				{'L3MON4D3/LuaSnip'},
-		}
-}
-
-}
+  -- Autocompletion
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      {'L3MON4D3/LuaSnip'},
+    }
+  }
+} 
