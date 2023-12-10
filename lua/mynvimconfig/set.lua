@@ -8,9 +8,11 @@ vim.opt.swapfile = true
 vim.opt.backup = false
 
 
+vim.opt.smartindent = true
+
 
 vim.opt.hlsearch = false
-vim.opt.incsearch = false
+vim.opt.incsearch = true 
 
 vim.opt.termguicolors = true
 
