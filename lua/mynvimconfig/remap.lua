@@ -12,6 +12,11 @@ set("n", "<C-u>", "<C-u>zz")
 set("n", "n", "nzzzv")
 set("n", "N", "Nzzzv")
 
+set({"i", "n"}, "<C-k>", "<C-w>k")
+set({"i", "n"}, "<C-j>", "<C-w>j")
+set({"i", "n"}, "<C-h>", "<C-w>h")
+set({"i", "n"}, "<C-l>", "<C-w>l")
+
 -- set({"n", "v", "i"}, )
 
 set({"n", "v"}, "<leader>y", [["+y]])
@@ -19,6 +24,7 @@ set("n", "<leader>Y", [["+Y]])
 set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 set("n", "<leader>f", vim.lsp.buf.format)
+set({"n", "i"}, "<C-a>", function ()vim.lsp.buf.code_action()end)
 
 -- set("n", "<C-k>", "<cmd>cnext<CR>zz")
 -- set("n", "<C-j>", "<cmd>cprev<CR>zz")
